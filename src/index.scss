@@ -1,0 +1,107 @@
+$container-bg: #f0f2f5;
+$text-color: #9eabba;
+$main-text: #1c1e2e;
+$main-bg: #f7fafc;
+$accent: #6170e4;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: $main-text;
+  background-color: $main-bg;
+}
+.app {
+  .container {
+    .login {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      background: $accent;
+      .login-container{
+        .instructions {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+            margin-top: 15px;
+            a {
+              color: #fff;
+              text-decoration: none;
+            }
+          }
+      }
+      .auth {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: $text-color;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.112);
+        background-color: $container-bg;
+        .social {
+          display: flex;
+          gap: 20px;
+          padding: 20px 10px;
+          margin-bottom: 40px;
+          button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: $main-bg;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.112);
+            transition: 0.3s;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: $text-color;
+            &:hover {
+              transform: translateY(-2px);
+            }
+            img {
+              width: 20px;
+            }
+          }
+        }
+        h3 {
+          margin-bottom: 20px;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+          width: 280px;
+          input {
+            color: $text-color;
+            padding: 12px 20px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.122);
+            font-size: 0.9rem;
+          }
+          input[type="submit"] {
+            cursor: pointer;
+            color: #fff;
+            background: $accent;
+          }
+          input:focus {
+            outline: none;
+          }
+          input::placeholder {
+            color: $text-color;
+          }
+        }
+      }
+     
+    }
+  }
+}
