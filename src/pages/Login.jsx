@@ -14,7 +14,7 @@ const Login = () => {
           <button><img src={github} alt="github" /><span>Github</span></button>
           <button><img src={google} alt="google" /><span>Google</span></button>
         </div>
-        <h3>Login Account</h3>
+        <p>Account Login</p>
         <form>
           
           <input type="email" autoComplete='off' name="email" id="email" placeholder='example@mail.com' />

@@ -12,7 +12,7 @@ const Register = () => {
             <button><img src={github} alt="github" /><span>Github</span></button>
             <button><img src={google} alt="google" /><span>Google</span></button>
           </div>
-          <h3>Register Account</h3>
+          <p>Create new account</p>
           <form>
             <input type="text" autoComplete='off' name="name" id="name" placeholder='John Doe' />
             <input type="email" autoComplete='off' name="email" id="email" placeholder='example@mail.com' />
