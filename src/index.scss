@@ -7,6 +7,11 @@ $card-bg: #171717;
 $accent: #6170e4;
 $accent-hover: #596aec;
 
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+
 // @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
 * {
@@ -145,6 +150,9 @@ body {
           display: flex;
           align-items: center;
           font-family: "Ubuntu", sans-serif;
+          @media #{$media-mobile} {
+            display: none;
+          }
           input {
             color: rgb(177, 177, 177);
             font-size: 1rem;
