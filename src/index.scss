@@ -1,6 +1,6 @@
 $container-bg: #f0f2f5;
 $text-color: #9eabba;
-$main-text: #393d58;
+$main-text: #e4e4e4;
 $main-bg: #f7fafc;
 $main-bg-2: #000;
 $card-bg: #171717;
@@ -14,9 +14,13 @@ $accent-hover: #596aec;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  background: #171717;
+}
 body {
   color: $main-text;
-  background-color: $main-bg;
+  background-color: $main-bg-2;
+  background-color: #000;
   font-family: "Ubuntu", sans-serif;
 }
 .app {
@@ -123,6 +127,8 @@ body {
   }
   .navbar {
     background: $card-bg;
+    position: sticky;
+    top: 0;
     nav {
       display: flex;
       align-items: center;
@@ -207,10 +213,12 @@ body {
           }
         }
         .avatar {
-          color: whitesmoke;
           border-radius: 50px;
-          &:hover {
-            color: white;
+          svg {
+            stroke: whitesmoke;
+            &:hover {
+              stroke: white;
+            }
           }
         }
       }
@@ -229,6 +237,58 @@ body {
       height: 40px;
       width: 40px;
       cursor: pointer;
+    }
+  }
+  .topic {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    .post {
+      flex-grow: 1;
+      width: 400px;
+      color: $main-text;
+      background-color: $card-bg;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      outline: 1px solid rgb(34, 34, 34);
+      a,
+      .post-title {
+        text-decoration: none;
+        color: $main-text;
+        margin-bottom: 10px;
+        &:hover {
+          color: $accent;
+        }
+      }
+      p {
+        color: $text-color;
+      }
+      img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+      .tags {
+        margin-top: 10px;
+        color: $accent;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        span {
+          a {
+            padding: 2px 6px 4px;
+            border: 1px solid transparent;
+            transition: 0.1s;
+            border-radius: 5px;
+            &:hover {
+              border: 1px solid green;
+            }
+          }
+        }
+      }
     }
   }
 }

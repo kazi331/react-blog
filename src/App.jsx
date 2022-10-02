@@ -10,6 +10,7 @@ import Register from "./pages/Register";
 import Single from "./pages/Single";
 import Write from "./pages/Write";
 import './index.scss'
+import Topic from "./comp/Topic";
 const Layout = () => {
   return (<>
     <Navbar />
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/article/:id', element: <Single /> },
+      { path: '/topic/:topic', element: <Topic /> },
       { path: '/write', element: <Write /> },
     ],
   },
