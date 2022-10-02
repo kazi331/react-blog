@@ -47,7 +47,7 @@ const Topic = () => {
       <TopicCard tag={tag} />
       <div className='topic'>
         {
-          posts?.map((post) => {
+          posts?.map(post => {
             const { title, description, id, tag_list, url, cover_image, social_image } = post;
             return (
               <div key={id} className="post">

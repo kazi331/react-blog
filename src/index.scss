@@ -195,7 +195,7 @@ body {
         a {
           border: none;
           background-color: transparent;
-          padding: 5px;
+          padding: 6px;
           color: gray;
           border-radius: 5px;
           &:hover {
@@ -208,19 +208,25 @@ body {
           }
         }
         .crt {
-          padding: 9px 10px;
+          padding: 8px 10px;
           color: $accent;
           border: 1px solid $accent;
           font-size: 1rem;
           text-decoration: none;
         }
         .noti {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           fill: #cccbcb;
           &:hover {
             fill: #e2e2e2;
           }
         }
         .avatar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           border-radius: 50px;
           svg {
             stroke: whitesmoke;
@@ -248,7 +254,7 @@ body {
     }
   }
   .topic {
-    padding: 10px;
+    padding: 10px 20px;
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
@@ -260,7 +266,7 @@ body {
       margin: 10px 0;
       padding: 10px;
       border-radius: 5px;
-      outline: 1px solid rgb(34, 34, 34);
+      border: 1px solid rgb(34, 34, 34);
       a,
       .post-title {
         text-decoration: none;
