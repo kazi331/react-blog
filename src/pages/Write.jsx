@@ -4,7 +4,7 @@ import 'react-quill/dist/quill.snow.css';
 
 const Write = () => {
   const [value, setValue] = useState('');
-  console.log(value)
+  // console.log(value)
   return (
     <div className='container write'>
       <h3>Write new post</h3>
