@@ -305,10 +305,55 @@ body {
       }
     }
   }
+  .topicCard {
+    border-top: 20px solid;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background: $card-bg;
+    margin: 20px auto;
+
+    .logo{
+      flex-grow: 1;
+      max-width: 100px;
+    }
+    .content {
+      flex-grow: 2;
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        h2 {
+          text-transform: capitalize;
+        }
+      }
+      p {
+        width: 75%;
+        line-height: 1.4rem;
+      }
+    }
+  }
 }
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding-right: 10px;
   padding-left: 10px;
+}
+.main-btn {
+  padding: 8px 10px;
+
+  border: 1px solid;
+  background-color: transparent;
+  padding: 6px 10px;
+  color: #ccc;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  &:hover {
+    color: #eee;
+    cursor: pointer;
+  }
 }

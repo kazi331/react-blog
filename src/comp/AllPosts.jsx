@@ -17,7 +17,6 @@ const AllPosts = () => {
     useEffect(() => {
         loadPosts();
     }, []);
-    console.log(posts)
     return (
         <div className='topic'>
             {

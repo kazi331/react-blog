@@ -44,8 +44,9 @@ const Topic = () => {
   }
   return (
     <>
-      <TopicCard tag={tag} />
-      <div className='topic'>
+
+      <div className='topic container'>
+        <TopicCard tag={tag} />
         {
           posts?.map(post => {
             const { title, description, id, tag_list, url, cover_image, social_image } = post;
