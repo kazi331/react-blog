@@ -13,7 +13,6 @@ function TopicCard({ tag }) {
       "text_color_hex": null
     }
   }
-  console.log(tag)
   const src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png'
 
   return (

@@ -17,6 +17,11 @@ const AllPosts = () => {
     useEffect(() => {
         loadPosts();
     }, []);
+    if(posts.length < 1) {
+        return (
+            <h3>Loading....</h3>
+        )
+    }
     return (
         <div className='topic'>
             {

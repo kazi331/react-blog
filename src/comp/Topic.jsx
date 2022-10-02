@@ -37,7 +37,6 @@ const Topic = () => {
     loadPosts();
     loadTags();
   }, [topic]);
-
   // handle 0 posts in topic component 
   if (posts.length < 1) {
     return 'loading...'
@@ -52,7 +51,9 @@ const Topic = () => {
             const { title, description, id, tag_list, url, cover_image, social_image } = post;
             return (
               <div key={id} className="post">
-                <img src={cover_image || social_image} alt="" />
+                <Link to={`/article/${id}`} >
+                  <img src={cover_image || social_image} alt="" />
+                </Link>
                 <a href={url} target="_blank" rel="noopener noreferrer" ><h3 className="post-title"> {title}</h3></a>
                 <p>{description}</p>
                 <div className="tags">
