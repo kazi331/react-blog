@@ -64,7 +64,7 @@ body {
       box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.112);
       background-color: $container-bg;
       h3 {
-        color: $main-text;
+        color: $accent;
       }
       .social {
         display: flex;
@@ -94,9 +94,9 @@ body {
       }
       p {
         margin-bottom: 20px;
-        color: $main-text;
+        color: $accent;
       }
-      form {
+      .form {
         display: flex;
         flex-direction: column;
         align-items: center;

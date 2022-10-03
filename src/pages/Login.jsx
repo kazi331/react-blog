@@ -7,28 +7,26 @@ import google from '../utils/google.svg'
 const Login = () => {
   return (
     <div className="login">
-    <div className="login-container">
-      <div className='auth'>
-        <h3>Sign in with</h3>
-        <div className="social">
-          <button><img src={github} alt="github" /><span>Github</span></button>
-          <button><img src={google} alt="google" /><span>Google</span></button>
+      <div className="login-container">
+        <div className='auth'>
+          <h3>Sign in with</h3>
+          <div className="social">
+            <button><img src={github} alt="github" /><span>Github</span></button>
+            <button><img src={google} alt="google" /><span>Google</span></button>
+          </div>
+          <p>Account Login</p>
+          <div className='form'>
+            <input type="email" autoComplete='off' name="email" id="email" placeholder='example@mail.com' />
+            <input type="password" autoComplete='off' name="password" placeholder='pasword' />
+            <input type='submit' value="Register" />
+          </div>
         </div>
-        <p>Account Login</p>
-        <form>
-          
-          <input type="email" autoComplete='off' name="email" id="email" placeholder='example@mail.com' />
-          <input type="password" autoComplete='off' name="password" placeholder='pasword' />
-          
-          <input type='submit' value="Register" />
-        </form>
-      </div>
-      <div className="instructions">
-        <Link to="/forgot">Forgot password</Link>
-        <Link to="/register" >Register</Link>
+        <div className="instructions">
+          <Link to="/forgot">Forgot password</Link>
+          <Link to="/register" >Register</Link>
+        </div>
       </div>
     </div>
-  </div>
   )
 }
 
