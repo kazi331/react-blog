@@ -1,10 +1,17 @@
 import logo from '../resources/dev.to.logo.png'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Avatar, Notification, Search } from '../resources/Icons'
+import { useEffect, useState } from 'react'
 
 function Navbar() {
+  const [navShadow, setNavShadow] = useState(false)
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      window.scrollY > 100 ? setNavShadow('navshadow') : setNavShadow(false)
+    })
+  }, [])
   return (
-    <div className='navbar'>
+    <div className={`navbar ${navShadow && 'navshadow'}`}>
       <nav className='container'>
         <div className="start">
           <Link to="/"><img className='logo' src={logo} alt="" /></Link>
