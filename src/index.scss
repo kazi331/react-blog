@@ -128,6 +128,37 @@ body {
             transform: translateY(-2px);
           }
         }
+        .label{
+          position: relative;
+          width: 100%;
+         &:hover .eye{
+          opacity: .8;
+         }
+         input{
+          padding-right: 40px;
+         }
+          .eye {
+            opacity: .3;
+            padding: 1px;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            width: 2px;
+            height: 2px;
+            color: gray;
+            position: absolute;
+            top: 7px;
+            right: 33px;
+            user-select: none;
+          }
+        }
+      }
+      .err {
+        color: orangered;
+        margin-top: 10px;
+      }
+      .msg {
+        margin-top: 10px;
       }
     }
   }
@@ -649,3 +680,5 @@ body {
     cursor: pointer;
   }
 }
+
+

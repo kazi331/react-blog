@@ -18,7 +18,7 @@ const Login = () => {
           <div className='form'>
             <input type="email" autoComplete='off' name="email" id="email" placeholder='example@mail.com' />
             <input type="password" autoComplete='off' name="password" placeholder='pasword' />
-            <input type='submit' value="Register" />
+            <input type='submit' value="Login" />
           </div>
         </div>
         <div className="instructions">
