@@ -128,17 +128,17 @@ body {
             transform: translateY(-2px);
           }
         }
-        .label{
+        .label {
           position: relative;
           width: 100%;
-         &:hover .eye{
-          opacity: .8;
-         }
-         input{
-          padding-right: 40px;
-         }
+          &:hover .eye {
+            opacity: 0.8;
+          }
+          input {
+            padding-right: 40px;
+          }
           .eye {
-            opacity: .3;
+            opacity: 0.3;
             padding: 1px;
             border: none;
             cursor: pointer;
@@ -504,7 +504,7 @@ body {
     background-color: $card-bg;
     border-radius: 8px;
     display: flex;
-    gap: 50px;
+    gap: 20px;
     @media #{$media-tablet} {
       flex-direction: column;
     }
@@ -534,13 +534,11 @@ body {
         // border-radius: 10px;
         overflow: hidden;
         // background: #1C1E2E;
+
         .ql-snow * {
           resize: vertical;
           // color: rgb(185, 185, 185);
           // stroke: gray;
-          &:hover {
-            // color: $accent-color;
-          }
         }
         /* .ql-snow {
           .ql-formats{
@@ -564,6 +562,12 @@ body {
           font-size: 1rem;
           min-height: 100px;
         }
+        .ql-editor * {
+          color: rgb(206, 206, 206);
+        }
+        .ql-editor.ql-blank::before {
+          color: gray;
+        }
         .ql-toolbar.ql-snow {
           border-color: rgb(59, 59, 59);
         }
@@ -574,10 +578,10 @@ body {
     }
     // write menu
     .menu {
+      flex: 2;
       .write-sidebar {
         position: sticky;
         top: 90px;
-        flex: 2;
         margin-top: 20px;
         .publish {
           margin-bottom: 20px;
@@ -680,5 +684,3 @@ body {
     cursor: pointer;
   }
 }
-
-
