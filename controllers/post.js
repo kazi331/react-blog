@@ -1,4 +1,4 @@
-import { db } from "../db.js"
+import { db } from "../db/db.js"
 
 export const addPost = (req, res) => {
     res.json('Add new post')
