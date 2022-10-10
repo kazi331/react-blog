@@ -1,4 +1,4 @@
-import { db } from "../db/db.js";
+import { db } from "../db.js";
 export const addUser = (req, res) => {
     res.json('add user');
 }

@@ -1,6 +1,6 @@
-import { db } from '../db/db.js'
-import bcrypt from 'bcryptjs'
-import jwt from 'jsonwebtoken'
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import { db } from '../db.js';
 // register route
 export const register = (req, res) => {
 
@@ -53,7 +53,7 @@ export const login = (req, res) => {
 
         res.cookie("user_access_token", token, { httpOnly: false });
         res.status(200).json(other)
-        
+
         // console.log('cookie', req.cookies)
 
     })
