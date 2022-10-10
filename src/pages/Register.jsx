@@ -45,7 +45,7 @@ const Register = () => {
           </div>
           <p>Create new account</p>
           <div className='form'>
-            <input type="text" name="username" onChange={handleInputs} id="username" placeholder='username' />
+            <input type="text" name="username" onChange={handleInputs} autoFocus id="username" placeholder='username' />
             <input type="email" name="email" onChange={handleInputs} id="email" placeholder='example@mail.com' />
             <label htmlFor="" className='label'>
               <input type={show ? 'text' : 'password'} name="password" onChange={handleInputs} placeholder='pasword' />
@@ -61,7 +61,8 @@ const Register = () => {
 
         </div>
         <div className="instructions">
-          <Link to="/forgot">Forgot password </Link>
+          {/* <Link to="/forgot">Forgot password </Link> */}
+          <p>Already have an account?</p>
           <Link to="/login"> Sign in </Link>
         </div>
       </div>
