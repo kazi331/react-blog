@@ -24,7 +24,7 @@ export const register = (req, res) => {
         db.query(q, [VALUES], (err, data) => {
             if (err) return res.json(err);
             // if(data) res.json(data);
-            res.cookie("user_access_token", token);
+            res.cookie("user_access_token", token, {httpOnly: true});
             return res.status(200).json({ data, message: 'User has been created!' });
         })
     });
