@@ -12,6 +12,7 @@ const Register = () => {
   const [show, setShow] = useState(false)
   const [show2, setShow2] = useState(false)
   const navigate = useNavigate();
+  
   const handleInputs = e => {
     e.preventDefault();
     setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -44,19 +45,19 @@ const Register = () => {
             <button><img src={google} alt="google" /><span>Google</span></button>
           </div>
           <p>Create new account</p>
-          <div className='form'>
-            <input type="text" name="username" onChange={handleInputs} autoFocus id="username" placeholder='username' />
-            <input type="email" name="email" onChange={handleInputs} id="email" placeholder='example@mail.com' />
+          <form className='form' onSubmit={handleSubmit}>
+            <input type="text" name="username" onChange={handleInputs} autoFocus id="username" placeholder='username' required/>
+            <input type="email" name="email" onChange={handleInputs} id="email" placeholder='example@mail.com' required/>
             <label htmlFor="" className='label'>
-              <input type={show ? 'text' : 'password'} name="password" onChange={handleInputs} placeholder='pasword' />
+              <input type={show ? 'text' : 'password'} name="password" onChange={handleInputs} placeholder='pasword' required/>
               <span className='eye' onClick={() => setShow(!show)}>{show ? <Eye /> : <EyeAlt />}</span>
             </label>
             <label htmlFor="" className='label'>
-              <input type={show2 ? 'text' : 'password'} name="confirm-password" placeholder='confirm pasword' />
+              <input type={show2 ? 'text' : 'password'} name="confirm-password" placeholder='confirm pasword' required/>
               <span className='eye' onClick={() => setShow2(!show2)}>{show2 ? <Eye /> : <EyeAlt />}</span>
             </label>
-            <input onClick={handleSubmit} type='submit' value="Register" />
-          </div>
+            <input type='submit' value="Register" required/>
+          </form>
           {err ? <p className="err">{err}</p> : <p className="msg">{message}</p>}
 
         </div>

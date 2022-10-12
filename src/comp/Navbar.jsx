@@ -1,10 +1,14 @@
 import logo from '../resources/dev.to.logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Avatar, Notification, Search } from '../resources/Icons'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { AuthContext } from '../context/authContext'
 
 function Navbar() {
   const [navShadow, setNavShadow] = useState(false)
+  const navigate = useNavigate();
+  const { currentUser, logout } = useContext(AuthContext)
+  console.log(currentUser)
   useEffect(() => {
     window.addEventListener('scroll', () => {
       window.scrollY > 100 ? setNavShadow('navshadow') : setNavShadow(false)
@@ -23,7 +27,11 @@ function Navbar() {
         <div className="end">
           <Link to="/write" className='crt'>Create Post</Link>
           <button className='noti'> <Notification /> </button>
-          <button className='avatar'> <Avatar /> </button>
+          {currentUser && <div className="user">
+            <span>{currentUser.username}</span>
+            <button className='crt' onClick={logout} >Logout</button>
+          </div>}
+          <button onClick={() => navigate('/login')} className='avatar'> <Avatar /> </button>
         </div>
       </nav>
     </div>

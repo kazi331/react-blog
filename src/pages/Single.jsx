@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import SideMenu from '../comp/SideMenu';
+import { AuthContext } from '../context/authContext';
 import cover from '../resources/cover.jpeg';
 import { DeleteIcon, EditIcon } from '../resources/Icons'
 const Single = () => {
+    const {currentUser} = useContext(AuthContext)
     let { id } = useParams()
     id = id.slice(-1);
     return (
@@ -17,10 +19,10 @@ const Single = () => {
                             <h2><Link to={`/author/2`} >John doe</Link></h2>
                             <span>Posted 2 days ago</span>
                         </div>
-                        <div className="action">
+                       {currentUser && <div className="action">
                             <Link to={`/write/?id=2`} className='edit' type="submit"> {EditIcon} </Link>
                             <button className='del' type="submit"> {DeleteIcon} </button>
-                        </div>
+                        </div>}
                     </div>
                     <h1 className='post-title'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, hic!</h1>
                     <p>

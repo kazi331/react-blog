@@ -1,14 +1,20 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+
+import { AuthContext } from '../context/authContext'
 import github from '../utils/github.svg'
 import google from '../utils/google.svg'
+
 
 
 const Login = () => {
   const [inputs, setInputs] = useState({});
   const [err, setErr] = useState(null);
   const navigate = useNavigate();
+
+  const { login } = useContext(AuthContext)
+
   const handleChange = e => {
     setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
@@ -18,8 +24,9 @@ const Login = () => {
     e.preventDefault();
     // console.log(inputs);
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', inputs);
-      console.log(res)
+      // const res = await axios.post('http://localhost:5000/api/auth/login', inputs);
+      await login(inputs)
+      // console.log(res)
       setErr(null)
       navigate("/")
     } catch (err) {
