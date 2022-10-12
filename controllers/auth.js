@@ -1,9 +1,10 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { db } from '../db.js';
+
+
 // register route
 export const register = (req, res) => {
-
     // CHECK EXISTING USER 
     const q = "SELECT * FROM users WHERE email = ? OR username = ?"
     db.query(q, [req.body.email, req.body.username], (err, data) => {
@@ -24,7 +25,7 @@ export const register = (req, res) => {
         db.query(q, [VALUES], (err, data) => {
             if (err) return res.json(err);
             // if(data) res.json(data);
-            res.cookie("user_access_token", token, {httpOnly: true});
+            res.cookie("user_access_token", token, { httpOnly: true });
             return res.status(200).json({ data, message: 'User has been created!' });
         })
     });
@@ -33,7 +34,7 @@ export const register = (req, res) => {
 
 //login route
 export const login = (req, res) => {
-
+    // console.log(req.body)
     // CHECH IF USE EXISTS
     const q = "SELECT * from users WHERE username = ?"
 
@@ -53,8 +54,7 @@ export const login = (req, res) => {
 
         res.cookie("user_access_token", token, { httpOnly: false });
         res.status(200).json(other)
-
-        // console.log('cookie', req.cookies)
+        
 
     })
 
