@@ -8,7 +8,7 @@ function Navbar() {
   const [navShadow, setNavShadow] = useState(false)
   const navigate = useNavigate();
   const { currentUser, logout } = useContext(AuthContext)
-  console.log(currentUser)
+  // console.log(currentUser)
   useEffect(() => {
     window.addEventListener('scroll', () => {
       window.scrollY > 100 ? setNavShadow('navshadow') : setNavShadow(false)

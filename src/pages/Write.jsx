@@ -18,9 +18,9 @@ const Write = () => {
           <ReactQuill theme="snow" value={value} onChange={setValue} placeholder="Start Typing... " />
         </div>
       </div>
-      <div className="menu">
+      {/* <div className="menu">
         <WriteSidebar />
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -30,6 +30,63 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 .app {
+  // HOME LAYOUT WITH MENU AND SIDEBAR
+  .home-layout {
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;
+
+    .container {
+      flex: 9;
+    }
+    .home-menu {
+      flex: 2;
+      padding: 10px;
+      padding-right: 0;
+      // background-color: gray;
+
+      @media #{$media-mobile} {
+        display: none;
+      }
+
+      .categories {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+
+        .category {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 6px;
+          padding-right: 0;
+          text-decoration: none;
+          color: $main-text;
+          border-radius: 5px;
+          &:hover {
+            background-color: $accent;
+            color: $main-text;
+          }
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+    .home-side {
+      padding: 10px;
+      flex: 3;
+      background-color: gray;
+
+      @media #{$media-tablet} {
+        display: none;
+      }
+    }
+  }
+
   // Login and Register page
   .login {
     display: flex;
@@ -129,7 +186,7 @@ body {
             background-color: $accent-hover;
             transform: translateY(-2px);
           }
-                }
+        }
         .label {
           position: relative;
           width: 100%;
@@ -174,17 +231,16 @@ body {
     position: sticky;
     top: 0;
     z-index: 2;
-
     nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 15px;
+      padding: 6px 15px;
       .start {
         display: flex;
         align-items: center;
         .logo {
-          width: 55px;
+          width: 46px;
           margin-right: 20px;
         }
         form {
@@ -264,17 +320,17 @@ body {
             fill: #e2e2e2;
           }
         }
-        .user{
-          span{
+        .user {
+          span {
             margin-right: 10px;
-            text-transform: capitalize;;
+            text-transform: capitalize;
           }
-          button{
+          button {
             padding: 3px 4px;
             background-color: $accent;
             color: white;
             border: none;
-            &:hover{
+            &:hover {
               background-color: orangered;
             }
           }
@@ -311,15 +367,46 @@ body {
     }
   }
 
-  // topic
-  .topic {
+  // Home
+  .home {
     padding: 10px 20px;
+    margin-top: 10px;
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+      .left,
+      .right {
+        display: flex;
+        gap: 10px;
+      }
+      .left button {
+        font-size: 1.1rem;
+      }
+      .right button {
+        font-size: 1rem;
+      }
+      button {
+        background: transparent;
+        color: $text-color;
+        cursor: pointer;
+        &:hover {
+          color: $accent;
+        }
+        &:active {
+          color: white;
+        }
+      }
+    }
+  }
+  // cards
+  .cards {
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
-    .post {
+    .card {
       flex-grow: 1;
-      width: 400px;
+      width: 350px;
       color: $main-text;
       background-color: $card-bg;
       margin: 10px 0;
@@ -394,6 +481,12 @@ body {
       p {
         width: 75%;
         line-height: 1.4rem;
+      }
+    }
+    @media #{$media-tablet} {
+      flex-direction: column;
+      .content p {
+        width: 100%;
       }
     }
   }
@@ -682,7 +775,7 @@ body {
   }
 }
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding-right: 10px;
   padding-left: 10px;

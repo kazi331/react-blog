@@ -7,15 +7,25 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Me from "./pages/Me";
 import Register from "./pages/Register";
-import Single from "./pages/Single";
+import Article from "./pages/Article";
 import Write from "./pages/Write";
 import './index.scss'
 import Topic from "./comp/Topic";
 import { useEffect } from "react";
+import HomeMenu from "./comp/HomeMenu";
+import HomeSide from "./comp/HomeSide";
+
 const Layout = () => {
   return (<>
     <Navbar />
-    <Outlet />
+    <div className="container">
+
+      <div className="home-layout">
+        <HomeMenu />
+        <Outlet className="outlet" />
+        <HomeSide />
+      </div>
+    </div>
     <Footer />
   </>)
 }
@@ -34,26 +44,25 @@ const ScrollToTop = ({ children }) => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<ScrollToTop> <Layout /> </ScrollToTop>,
-    children: [
-      { path: '/', element: <Home /> },
-      { path: '/article/:id', element: <Single /> },
-      { path: '/topic/:topic', element: <Topic /> },
-      { path: '/write', element: <Write /> },
-    ],
+    element: <ScrollToTop> <Layout /> </ScrollToTop>,
+    children:
+      [
+        { path: '/', element: <Home /> },
+        { path: '/article/:id', element: <Article /> },
+        { path: '/topic/:topic', element: <Topic /> },
+        { path: '/write', element: <Write /> },
+      ],
   },
-  { path: "/home", element: <Home />, },
   {
     path: "/about", element: <Layout />,
-    children: [
-      { path: '/about', element: <About /> },
-      { path: '/about/me', element: <Me /> },
-    ]
+    children:
+      [
+        { path: '/about', element: <About /> },
+        { path: '/about/me', element: <Me /> },
+      ]
   },
   { path: "/login", element: <Login />, },
   { path: "/register", element: <Register />, },
-  { path: "/write", element: <Write />, },
-  { path: "/post", element: <Single />, },
   { path: "/*", element: <Error />, },
 ]);
 
@@ -62,7 +71,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <div className="app">
-        <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </div>
   )
 }

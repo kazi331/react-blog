@@ -1,6 +1,7 @@
-import axios from 'axios'
-import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import Card from './Card';
 import TopicCard from './TopicCard';
 const Topic = () => {
   const [posts, setPosts] = useState([]);
@@ -42,29 +43,15 @@ const Topic = () => {
     return 'loading...'
   }
   return (
-    <>
-
-      <div className='topic container'>
-        <TopicCard tag={tag} />
+    <div className='container'>
+      <TopicCard tag={tag} />
+      <div className='cards'>
         {
-          posts?.map(post => {
-            const { title, description, id, tag_list, url, cover_image, social_image } = post;
-            return (
-              <div key={id} className="post">
-                <Link to={`/article/${id}`} >
-                  <img src={cover_image || social_image} alt="" />
-                </Link>
-                <a href={url} target="_blank" rel="noopener noreferrer" ><h3 className="post-title"> {title}</h3></a>
-                <p>{description}</p>
-                <div className="tags">
-                  {tag_list.map((tag, i) => <span key={i}> <Link to={`/topic/${tag}`} >#{tag} </Link> </span>)}
-                </div>
-              </div>
-            )
-          })
+          posts?.map(post => <Card key={post.id} post={post} />)
         }
       </div>
-    </>
+    </div>
+
   )
 }
 
