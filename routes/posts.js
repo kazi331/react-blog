@@ -1,13 +1,12 @@
 import express from 'express';
-import { addPost, posts } from '../controllers/post.js';
+import { addPost, deletePost, getPost, getPosts, updatePost } from '../controllers/post.js';
 const router = express.Router();
 
-router.get('/1', (req, res) => {
-    res.json('1st post')
-})
-router.get('/add', addPost)
-
-router.get('/', posts)
+router.get('/', getPosts) // get all post 
+router.post('/add', addPost) // add new post
+router.put('/update/:id', updatePost) // update post
+router.delete('/delete/:id', deletePost) // delete post
+router.get('/:id', getPost )
 
 
 
