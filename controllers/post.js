@@ -12,8 +12,9 @@ export const getPosts = (req, res) => {
 
 // GET Single POST
 export const getPost = (req, res) => {
+
+    const q = "SELECT `username`, `title`, `desc`, `img`, `category`, `date`, `uid` FROM users u JOIN posts p ON u.id=p.uid WHERE p.id = ?"
     // console.log(req.params.id)
-    const q = "SELECT * FROM posts where id=?"
     db.query(q, [req.params.id], (err, data) => {
         if (err) return res.json(err)
         return res.status(200).json(data)
