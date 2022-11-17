@@ -1,6 +1,6 @@
 import Cards from '../comp/Cards';
-const Home = () => {
 
+const Home = () => {
   return (
     <div className='container'>
     <div className='home'>

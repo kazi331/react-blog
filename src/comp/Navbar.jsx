@@ -25,7 +25,7 @@ function Navbar() {
           </form>
         </div>
         <div className="end">
-          <Link to="/write" className='crt'>Create Post</Link>
+          <Link to={currentUser ? '/write' : '/login'} className='crt'>Create Post</Link>
           <button className='noti'> <Notification /> </button>
           {currentUser && <div className="user">
             <span>{currentUser.username}</span>

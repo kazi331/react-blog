@@ -12,7 +12,7 @@ const Register = () => {
   const [show, setShow] = useState(false)
   const [show2, setShow2] = useState(false)
   const navigate = useNavigate();
-  
+
   const handleInputs = e => {
     e.preventDefault();
     setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -52,11 +52,7 @@ const Register = () => {
               <input type={show ? 'text' : 'password'} name="password" onChange={handleInputs} placeholder='pasword' required/>
               <span className='eye' onClick={() => setShow(!show)}>{show ? <Eye /> : <EyeAlt />}</span>
             </label>
-            <label htmlFor="" className='label'>
-              <input type={show2 ? 'text' : 'password'} name="confirm-password" placeholder='confirm pasword' required/>
-              <span className='eye' onClick={() => setShow2(!show2)}>{show2 ? <Eye /> : <EyeAlt />}</span>
-            </label>
-            <input type='submit' value="Register" required/>
+                 <input type='submit' value="Register" required/>
           </form>
           {err ? <p className="err">{err}</p> : <p className="msg">{message}</p>}
 

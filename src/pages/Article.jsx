@@ -23,20 +23,20 @@ const Article = () => {
         fetchPost();
     }, [])
     if (!post) return 'loading...'
-console.log(post.uid)
+    console.log(post)
     return (
         <div className='single container'>
             <div className="content">
-                <img className='thumbnail' src={cover || post.img} alt="" />
+                <img className='thumbnail' src={post?.img} alt="" />
                 <div className="content-body">
                     <div className="author">
-                        <Link to={`/author/2`} > <img src="https://api.lorem.space/image/face?w=150&h=150" alt="" /></Link>
+                        {post.avatar && <Link to={`/author/${post.uid}`} > <img src={post.avatar} alt="" /></Link>}
                         <div>
-                            <h2><Link to={`/author/2`} >John doe</Link></h2>
+                            <h2><Link to={`/author/${post.uid}`} >John doe</Link></h2>
                             {/* post date: moment js */}
                             <span>{moment(post.date).fromNow()} </span>
                         </div>
-                        {currentUser && <div className="action">
+                        {currentUser?.id === post.uid && <div className="action">
                             <Link to={`/write/?id=2`} className='edit' type="submit"> {EditIcon} </Link>
                             <button className='del' type="submit"> {DeleteIcon} </button>
                         </div>}
@@ -44,7 +44,7 @@ console.log(post.uid)
 
                     <h1 className='post-title'>{post.title}</h1>
                     {/* Post Description */}
-                    <p>{post.desc}</p>
+                    {post.desc}
 
                 </div>
             </div>

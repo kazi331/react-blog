@@ -14,23 +14,23 @@ import Topic from "./comp/Topic";
 import { useEffect } from "react";
 import HomeMenu from "./comp/HomeMenu";
 import HomeSide from "./comp/HomeSide";
+import Write2 from "./pages/Write2";
 
 const Layout = () => {
   return (<>
     <Navbar />
     <div className="container">
-
       <div className="home-layout">
         <HomeMenu />
         <Outlet className="outlet" />
-        <HomeSide />
+        {/* <HomeSide /> */}
       </div>
     </div>
     <Footer />
   </>)
 }
 
-// scroll to top for react router dom 
+// scroll to top for react router dom
 const ScrollToTop = ({ children }) => {
   const location = useLocation();
   useEffect(() => {
@@ -40,7 +40,7 @@ const ScrollToTop = ({ children }) => {
 }
 
 
-// react router v6.4.1 setup 
+// react router v6.4.1 setup
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,6 +51,7 @@ const router = createBrowserRouter([
         { path: '/article/:id', element: <Article /> },
         { path: '/topic/:topic', element: <Topic /> },
         { path: '/write', element: <Write /> },
+        { path: '/write2', element: <Write2 /> },
       ],
   },
   {

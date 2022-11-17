@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
 const Card = ({ post }) => {
-    const { title, desc, id, category, tags, url, cover_image, social_image } = post;
+    const { title, desc, id, category, tags, url, img } = post;
     return (
         <article key={id} className="card">
             <Link to={`/article/${id}`} >
-                <img src={cover_image || social_image} alt="" />
+                <img src={img} alt="" />
             </Link>
             <Link  to={`/article/${id}`} ><h3 className="post-title"> {title}</h3></Link>
             <p>{category}</p>

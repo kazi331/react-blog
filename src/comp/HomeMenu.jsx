@@ -6,16 +6,16 @@ const HomeMenu = () => {
   return (
     <div className='home-menu'>
       <section className='categories'>
-        <MenuItem to="?cat=react" icon={<Avatar />} title="React" />
-        <MenuItem to="?cat=javascript" icon={<Avatar />} title="Javascript" />
-        <MenuItem to="?cat=nodejs" icon={<Avatar />} title="Node js" />
-        <MenuItem to="?cat=mongodb" icon={<Avatar />} title="MongoDB" />
-        <MenuItem to="?cat=nextjs" icon={<Avatar />} title="Next js" />
-        <MenuItem to="?cat=webdev" icon={<Avatar />} title="WebDev" />
-        <MenuItem to="?cat=career" icon={<Avatar />} title="Career" />
-        <MenuItem to="?cat=programming" icon={<Avatar />} title="Programming" />
-        <MenuItem to="?cat=beginners" icon={<Avatar />} title="Beginners" />
-        <MenuItem to="?cat=guide" icon={<Avatar />} title="Guides" />
+        <MenuItem to="/?cat=react" icon={<Avatar />} title="React" />
+        <MenuItem to="/?cat=javascript" icon={<Avatar />} title="Javascript" />
+        <MenuItem to="/?cat=nodejs" icon={<Avatar />} title="Node js" />
+        <MenuItem to="/?cat=mongodb" icon={<Avatar />} title="MongoDB" />
+        <MenuItem to="/?cat=nextjs" icon={<Avatar />} title="Next js" />
+        <MenuItem to="/?cat=webdev" icon={<Avatar />} title="WebDev" />
+        <MenuItem to="/?cat=career" icon={<Avatar />} title="Career" />
+        <MenuItem to="/?cat=programming" icon={<Avatar />} title="Programming" />
+        <MenuItem to="/?cat=beginners" icon={<Avatar />} title="Beginners" />
+        <MenuItem to="/?cat=guide" icon={<Avatar />} title="Guides" />
         <MenuItem to="/tags" icon={<Avatar />} title="Tags" />
         <MenuItem to="/faq" icon={<Avatar />} title="FAQs" />
         <MenuItem to="/sponsors" icon={<Avatar />} title="Sponsors" />

@@ -1,0 +1,44 @@
+.editor-style {
+  background: #2E3440;
+  margin-top: 20px;
+  border: 1px solid rgb(59, 59, 59);
+  border-radius: 5px;
+}
+
+.editor-style .mantine-Group-root {
+  background: #2E3440;
+  border-color: #5b6475;
+}
+
+.editor-style .mantine-Group-root button {
+  background: #505969;
+  color: white;
+  border: none;
+}
+.editor-style .mantine-Group-root button:hover {
+  background: #697181;
+  border: none;
+}
+
+.editor-style .mantine-RichTextEditor-content {
+  background: #2E3440;
+  padding: 0;
+  margin: 0;
+}
+
+.editor-style .ProseMirror {
+  color: white;
+  min-height: 300px;
+  /* border: 1px solid rgb(59, 59, 59); */
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.editor-style .ProseMirror-focused {
+  border-color: #909dff;
+}
+
+.editor-style pre{
+  /* background: #000C18 !important; */
+}
