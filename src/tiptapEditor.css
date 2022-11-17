@@ -15,6 +15,7 @@
   color: white;
   border: none;
 }
+
 .editor-style .mantine-Group-root button:hover {
   background: #697181;
   border: none;
@@ -39,6 +40,16 @@
   border-color: #909dff;
 }
 
-.editor-style pre{
+.editor-style pre {
   /* background: #000C18 !important; */
+}
+
+.editor-style .mantine-ColorSwatch-overlay {
+  background: transparent;
+  border-radius: 25px;
+}
+
+.editor-style .mantine-ColorSwatch-root {
+  width: 18px;
+  height: 18px;
 }

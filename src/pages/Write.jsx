@@ -6,7 +6,7 @@ import WriteSidebar from '../comp/WriteSidebar';
 const Write = () => {
   const [value, setValue] = useState('');
 
-  // console.log(value)
+  console.log(value)
   return (
     <div className='container write'>
       <div className="content">
@@ -18,7 +18,7 @@ const Write = () => {
           <ReactQuill theme="snow" value={value} onChange={setValue} placeholder="Start Typing... " />
         </div>
       </div>
-      <div className="menu">
+      <div className="write-menu">
         <WriteSidebar />
       </div>
     </div>

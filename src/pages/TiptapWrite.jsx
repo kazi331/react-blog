@@ -1,42 +1,39 @@
 import { Link, RichTextEditor as RTE } from '@mantine/tiptap';
 import { IconSourceCode } from '@tabler/icons';
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
+import { Color } from '@tiptap/extension-color';
+import TextAlign from '@tiptap/extension-text-align';
+import TextStyle from '@tiptap/extension-text-style';
+import Underline from '@tiptap/extension-underline';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { lowlight } from 'lowlight';
 import WriteSidebar from '../comp/WriteSidebar';
-import { Color } from '@tiptap/extension-color';
-import TextStyle from '@tiptap/extension-text-style';
-import Underline from '@tiptap/extension-underline';
-import '../editor.css';
+import '../tiptapEditor.css';
 
 
 const colors = [
-  '#25262b', '#868e96', '#fa5252', '#e64980', '#be4bdb', '#7950f2', '#4c6ef5', '#228be6', '#15aabf', '#12b886', '#40c057', '#82c91e', '#fab005', '#fd7e14',]
+  '#25262b', '#868e96', '#fa5252', '#e64980', '#be4bdb', '#7950f2', '#4c6ef5', '#228be6', '#15aabf', '#12b886', '#40c057', '#82c91e', '#fab005', '#fd7e14'
+]
 
-function escapeHtml(unsafe) {
-  return unsafe
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
-}
-
-const Write2 = () => {
+const TipTapEditor = () => {
+  // const [value, setValue] = useState("")
   const editor = useEditor({
     extensions: [
-      StarterKit,
-      TextStyle,
-      Color,
-      Link,
-      Underline,
+      StarterKit, TextStyle, Color, Link, Underline,
       CodeBlockLowlight.configure({
         lowlight,
       }),
+      TextAlign.configure({ types: ['heading', 'paragraph'] }),
     ],
     content: `<p>Post Content.</p>`
   })
+  const jsondoc = editor?.getJSON();
+  const htmldoc = editor?.getHTML();
+
+  // console.log(jsondoc)
+  console.log(htmldoc)
+
   return (
     <div className='container write'>
       <div className="content">
@@ -58,7 +55,7 @@ const Write2 = () => {
               <RTE.ClearFormatting />
               <RTE.Highlight />
               <RTE.Code />
-              <RTE.CodeBlock icon={({ size }) => <IconSourceCode size={size} /> } />
+              <RTE.CodeBlock icon={({ size }) => <IconSourceCode size={size} />} />
             </RTE.ControlsGroup>
 
             <RTE.ControlsGroup>
@@ -120,4 +117,4 @@ const Write2 = () => {
   )
 }
 
-export default Write2
+export default TipTapEditor

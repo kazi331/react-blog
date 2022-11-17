@@ -14,7 +14,7 @@ import Topic from "./comp/Topic";
 import { useEffect } from "react";
 import HomeMenu from "./comp/HomeMenu";
 import HomeSide from "./comp/HomeSide";
-import Write2 from "./pages/Write2";
+import TiptapWrite from "./pages/TiptapWrite";
 
 const Layout = () => {
   return (<>
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         { path: '/article/:id', element: <Article /> },
         { path: '/topic/:topic', element: <Topic /> },
         { path: '/write', element: <Write /> },
-        { path: '/write2', element: <Write2 /> },
+        { path: '/tiptap', element: <TiptapWrite /> },
       ],
   },
   {
